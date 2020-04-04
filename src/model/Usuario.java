@@ -15,7 +15,7 @@ public class Usuario implements Serializable {
 	private String senha;
 	private String sexo;
 	private String telefone;
-	private String tipoEndereço;
+	private String tipoEndereco;
 	private String cep;
 	private String rua;
 	private String cidade;
@@ -25,7 +25,7 @@ public class Usuario implements Serializable {
 	}
 	
 	public Usuario(int id, String nome, String sobrenome, String nomedeusuario, String email, String senha, String sexo,
-			String telefone, String tipoEndereço, String cep, String rua, String cidade, String estado) {
+			String telefone, String tipoEndereco, String cep, String rua, String cidade, String estado) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -35,7 +35,7 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 		this.sexo = sexo;
 		this.telefone = telefone;
-		this.tipoEndereço = tipoEndereço;
+		this.tipoEndereco = tipoEndereco;
 		this.cep = cep;
 		this.rua = rua;
 		this.cidade = cidade;
@@ -78,8 +78,8 @@ public class Usuario implements Serializable {
 		return telefone;
 	}
 
-	public String getTipoEndereço() {
-		return tipoEndereço;
+	public String getTipoEndereco() {
+		return tipoEndereco;
 	}
 
 	public String getCep() {
@@ -130,8 +130,8 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 	}
 
-	public void setTipoEndereço(String tipoEndereço) {
-		this.tipoEndereço = tipoEndereço;
+	public void setTipoEndereco(String tipoEndereco) {
+		this.tipoEndereco = tipoEndereco;
 	}
 
 	public void setCep(String cep) {
@@ -154,7 +154,7 @@ public class Usuario implements Serializable {
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", nomedeusuario=" + nomedeusuario
 				+ ", email=" + email + ", senha=" + senha + ", sexo=" + sexo + ", telefone=" + telefone
-				+ ", tipoEndereço=" + tipoEndereço + ", cep=" + cep + ", rua=" + rua + ", cidade=" + cidade
+				+ ", tipoEndereï¿½o=" + tipoEndereco + ", cep=" + cep + ", rua=" + rua + ", cidade=" + cidade
 				+ ", estado=" + estado + "]";
 	}
 	

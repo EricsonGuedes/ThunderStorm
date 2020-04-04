@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import model.Usuario;
 import service.UsuarioService;
 
@@ -18,12 +19,12 @@ import service.UsuarioService;
 public class ManterUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public ManterUsuarioController() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor. 
+	 */
+	public ManterUsuarioController() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,8 +49,8 @@ public class ManterUsuarioController extends HttpServlet {
 		String pRua = request.getParameter("rua");
 		String pCidade = request.getParameter("cidade");
 		String pEstado = request.getParameter("estado");
-		
-		
+
+
 		//instanciar o javabean
 		Usuario usuario = new Usuario();
 		usuario.setNome(pNome);
@@ -59,22 +60,21 @@ public class ManterUsuarioController extends HttpServlet {
 		usuario.setSenha(pSenha);
 		usuario.setSexo(pSexo);
 		usuario.setTelefone(pTelefone);
-		usuario.setTipoEndereço(pTipoEndereco);
+		usuario.setTipoEndereco(pTipoEndereco);
 		usuario.setCep(pCep);
 		usuario.setRua(pRua);
 		usuario.setCidade(pCidade);
 		usuario.setEstado(pEstado);
-		
+
 		//instanciar o service
 		UsuarioService us = new UsuarioService();
 		us.criar(usuario);
 		usuario = us.carregar(usuario.getId());
 		doGet(request, response);
-		
+
 		//enviarpara o jsp
-		request.setAttribute("cliente", usuario);
+		request.setAttribute("usuario", usuario);
 		RequestDispatcher view = request.getRequestDispatcher("Usuario.jsp");
 		view.forward(request, response);
 	}
-
 }
