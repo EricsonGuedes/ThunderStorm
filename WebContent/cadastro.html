@@ -8,7 +8,7 @@
 	<body>
 
 	<h2 style="">Cadastro</h2>
-		<form>
+		<form action ="ManterUsuario.do" method="post">
 			Nome:  <input type="text" name="nome">*
 			Sobrenome:  <input type="text" name="sobrenome">*<br><br>
 			Nome de usuário: <input type="text" name="username">*<br><br>
@@ -20,7 +20,7 @@
 			<br>
 			
 			<h3 style="">Endereço inicial</h3>
-				Tipo de endereço: (Casa, Trabalho, Faculdade, Academia...): <input type="text" name="tipo">*<br><br>
+				Tipo de endereço: (Casa, Trabalho, Faculdade, Academia...): <input type="text" name="tipo-endereco">*<br><br>
 				CEP: <input type="text" name="cep">*<br><br>
 				Rua:  <input type="text" name="rua">*<br><br>
 				Cidade:  <input type="text" name="cidade">*<br><br>
@@ -55,9 +55,7 @@
 					<option value="to">TO</option>
 				</select>
 
-
-
-			<input type="submit" value="Enviar"><br><br>
+			<input type="submit" value="Criar" name="acao" ><br><br>
 
 		</form>
 		<a href="index.html" style="color:black ">Voltar</a> 
