@@ -20,7 +20,7 @@ public class UsuarioDAO {
 			stm.setString(5, usuario.getSenha());
 			stm.setString(6, usuario.getSexo());
 			stm.setString(7, usuario.getTelefone());
-			stm.setString(8, usuario.getTipoEndereço());
+			stm.setString(8, usuario.getTipoEndereco());
 			stm.setString(9, usuario.getCep());
 			stm.setString(10, usuario.getRua());
 			stm.setString(11, usuario.getCidade());
@@ -54,7 +54,7 @@ public class UsuarioDAO {
 			stm.setString(5, usuario.getSenha());
 			stm.setString(6, usuario.getSexo());
 			stm.setString(7, usuario.getTelefone());
-			stm.setString(8, usuario.getTipoEndereço());
+			stm.setString(8, usuario.getTipoEndereco());
 			stm.setString(9, usuario.getCep());
 			stm.setString(10, usuario.getRua());
 			stm.setString(11, usuario.getCidade());
@@ -94,7 +94,7 @@ public class UsuarioDAO {
 					usuario.setEmail(rs.getString("email"));
 					usuario.setSenha(rs.getString("senha"));
 					usuario.setTelefone(rs.getString("telefone"));
-					usuario.setTipoEndereço(rs.getString("tipo-endereco"));
+					usuario.setTipoEndereco(rs.getString("tipo-endereco"));
 					usuario.setCep(rs.getString("cep"));
 					usuario.setRua(rs.getString("rua"));
 					usuario.setCidade(rs.getString("cidade"));
@@ -108,7 +108,7 @@ public class UsuarioDAO {
 					usuario.setEmail(null);
 					usuario.setSenha(null);
 					usuario.setTelefone(null);
-					usuario.setTipoEndereço(null);
+					usuario.setTipoEndereco(null);
 					usuario.setCep(null);
 					usuario.setRua(null);
 					usuario.setCidade(null);
