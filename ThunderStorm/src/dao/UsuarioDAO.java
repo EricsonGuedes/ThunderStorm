@@ -11,7 +11,7 @@ import model.Usuario;
 public class UsuarioDAO {
 	
 	public int criar(Usuario usuario) {
-		String sqlInsert = "INSERT INTO Usuario(nome, sobrenome, username, email, senha, sexo, cep, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sqlInsert = "INSERT INTO usuario(nome, sobrenome, username, email, senha, sexo, cep, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 			stm.setString(1, usuario.getNome());

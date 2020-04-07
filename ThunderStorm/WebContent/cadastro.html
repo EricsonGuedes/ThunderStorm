@@ -26,18 +26,18 @@
         				<div class="input-group-prepend">
           					<span class="input-group-text" id="inputGroupPrepend">@</span>
        					</div>
-       					 <input type="text" name="username" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" maxlength="10" required placeholder="Nome de usuário">
+       					 <input type="text" name="username" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" maxlength="25" required placeholder="Nome de usuário">
       					</div>
 					</div>
 					<div class="form-group col-md-6">
 						<label for="email">E-mail:</label>
 						<input type="text" name="email" class="form-control" maxlength="50" required placeholder="E-mail">	
 						<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Sexo:</label>
-					  	<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+					  	<select class="custom-select my-1 mr-sm-2" id="sexo" name="sexo">
 						    <option selected>Escolha o sexo...</option>
-						    <option value="M">Masculino</option>
-						    <option value="F">Feminino</option>
-						    <option value="X">Prefiro não dizer</option>
+						    <option value="M" id="M" name="M">Masculino</option>
+						    <option value="F" id="F" name="F">Feminino</option>
+						    <option value="X" id="X" name="X">Prefiro não dizer</option>
 					  	</select>
 					</div>
 					<div class="form-group col-md-6">
@@ -86,8 +86,8 @@
 				     	 </select>
 				    </div>
 				    <div class="col-md-3 mb-3">
-				      <label for="validationDefault05">CEP</label>
-				      <input type="text" class="form-control" id="validationDefault05" required placeholder="CEP">
+				      <label for="cep">CEP</label>
+				      <input type="text" class="form-control" id="cep" name="cep" required placeholder="CEP">
 				    </div>
 			  </div>
 			<input type="submit" value="Criar" name="acao" class="btn btn-primary">
