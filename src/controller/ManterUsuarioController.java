@@ -32,14 +32,11 @@ public class ManterUsuarioController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pNome = request.getParameter("nome");
 		String pSobrenome = request.getParameter("sobrenome");
-		String pNomedeusuario = request.getParameter("nome-usuaruio");
+		String pNomedeusuario = request.getParameter("username");
 		String pEmail = request.getParameter("email");
 		String pSenha = request.getParameter("senha");
 		String pSexo = request.getParameter("sexo");
-		String pTelefone = request.getParameter("telefone");
-		String pTipoEndereco = request.getParameter("tipo-endereco");
 		String pCep = request.getParameter("cep");
-		String pRua = request.getParameter("rua");
 		String pCidade = request.getParameter("cidade");
 		String pEstado = request.getParameter("estado");
 
@@ -52,10 +49,7 @@ public class ManterUsuarioController extends HttpServlet {
 		usuario.setEmail(pEmail);
 		usuario.setSenha(pSenha);
 		usuario.setSexo(pSexo);
-		usuario.setTelefone(pTelefone);
-		usuario.setTipoEndereco(pTipoEndereco);
 		usuario.setCep(pCep);
-		usuario.setRua(pRua);
 		usuario.setCidade(pCidade);
 		usuario.setEstado(pEstado);
 

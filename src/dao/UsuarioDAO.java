@@ -9,7 +9,7 @@ import model.Usuario;
 
 public class UsuarioDAO {
 	public int criar(Usuario usuario) {
-		String sqlInsert = "INSERT INTO usuario(nome, sobrenome, nomedeusuario, email, senha, sexo, telefone, tipo-endereco, cep, rua, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sqlInsert = "INSERT INTO usuario(nome, sobrenome, nomedeusuario, email, senha, sexo, cep, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
@@ -19,12 +19,9 @@ public class UsuarioDAO {
 			stm.setString(4, usuario.getEmail());
 			stm.setString(5, usuario.getSenha());
 			stm.setString(6, usuario.getSexo());
-			stm.setString(7, usuario.getTelefone());
-			stm.setString(8, usuario.getTipoEndereco());
-			stm.setString(9, usuario.getCep());
-			stm.setString(10, usuario.getRua());
-			stm.setString(11, usuario.getCidade());
-			stm.setString(12, usuario.getEstado());
+			stm.setString(7, usuario.getCep());
+			stm.setString(8, usuario.getCidade());
+			stm.setString(9, usuario.getEstado());
 
 			stm.execute();
 			String sqlQuery = "SELECT LAST_INSERT_ID()";
@@ -43,7 +40,7 @@ public class UsuarioDAO {
 	}
 
 	public void atualizar(Usuario usuario) {
-		String sqlUpdate = "UPDATE usuario SET nome=?, sobrenome=?, nomedeusuario=?, email=?, senha=?, sexo=?, telefone=?, tipo-endereco=?, cep=?, rua=?, cidade=?, estado=?";
+		String sqlUpdate = "UPDATE usuario SET nome=?, sobrenome=?, nomedeusuario=?, email=?, senha=?, sexo=?, cep=?, cidade=?, estado=?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
@@ -53,13 +50,10 @@ public class UsuarioDAO {
 			stm.setString(4, usuario.getEmail());
 			stm.setString(5, usuario.getSenha());
 			stm.setString(6, usuario.getSexo());
-			stm.setString(7, usuario.getTelefone());
-			stm.setString(8, usuario.getTipoEndereco());
-			stm.setString(9, usuario.getCep());
-			stm.setString(10, usuario.getRua());
-			stm.setString(11, usuario.getCidade());
-			stm.setString(12, usuario.getEstado());
-			stm.setInt(13, usuario.getId());
+			stm.setString(7, usuario.getCep());
+			stm.setString(8, usuario.getCidade());
+			stm.setString(9, usuario.getEstado());
+			stm.setInt(10, usuario.getId());
 			stm.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,10 +87,8 @@ public class UsuarioDAO {
 					usuario.setNomedeusuario(rs.getString("nomedeusuario"));
 					usuario.setEmail(rs.getString("email"));
 					usuario.setSenha(rs.getString("senha"));
-					usuario.setTelefone(rs.getString("telefone"));
-					usuario.setTipoEndereco(rs.getString("tipo-endereco"));
+					usuario.setSexo(rs.getString("sexo"));
 					usuario.setCep(rs.getString("cep"));
-					usuario.setRua(rs.getString("rua"));
 					usuario.setCidade(rs.getString("cidade"));
 					usuario.setEstado(rs.getString("estado"));
 
@@ -107,10 +99,8 @@ public class UsuarioDAO {
 					usuario.setNomedeusuario(null);
 					usuario.setEmail(null);
 					usuario.setSenha(null);
-					usuario.setTelefone(null);
-					usuario.setTipoEndereco(null);
+					usuario.setSexo(null);
 					usuario.setCep(null);
-					usuario.setRua(null);
 					usuario.setCidade(null);
 					usuario.setEstado(null);
 					
