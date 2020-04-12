@@ -7,12 +7,12 @@ public class UsuarioService {
 
 	UsuarioDAO dao = new UsuarioDAO();
 	
-	public int criar(Usuario cliente) {
-		return dao.criar(cliente);
+	public int criar(Usuario usuario) {
+		return dao.criar(usuario);
 	}
 	
-	public void atualizar(Usuario cliente){
-		dao.atualizar(cliente);
+	public void atualizar(Usuario usuario){
+		dao.atualizar(usuario);
 	}
 	
 	public void excluir(int id){

@@ -1,5 +1,8 @@
 package dao;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,11 +17,24 @@ public class UsuarioDAO {
 		String sqlInsert = "INSERT INTO usuario(nome, sobrenome, username, email, senha, sexo, cep, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
+			
+			// Iniciando criptografia
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			byte messageDigest[] = md.digest(usuario.getSenha().getBytes("UTF-8"));
+			
+			StringBuilder sb = new StringBuilder();
+			
+			for(byte b : messageDigest) {
+				sb.append(String.format("%02X", 0xFF & b));
+			}
+			String senhaCript = sb.toString();
+			//Finalização da criptografia
+			
 			stm.setString(1, usuario.getNome());
 			stm.setString(2, usuario.getSobrenome());
 			stm.setString(3, usuario.getUsername());
 			stm.setString(4, usuario.getEmail());
-			stm.setString(5, usuario.getSenha());
+			stm.setString(5, senhaCript);
 			stm.setString(6, usuario.getSexo());
 			stm.setString(7, usuario.getCep());
 			stm.setString(8, usuario.getCidade());
@@ -35,6 +51,12 @@ public class UsuarioDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		return usuario.getId();
 	}
