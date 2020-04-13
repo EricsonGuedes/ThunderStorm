@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +9,7 @@
     	<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
+		<c:import url="Menu.jsp"/>
 		<div id="main" class="container">
 			<h2 class="page-header">Cadastro</h2>
 			<form action ="ManterUsuario.do" method="get">
@@ -91,7 +94,7 @@
 				    </div>
 			  </div>
 			<input type="submit" value="Criar" name="acao" class="btn btn-primary">
-			<a href="index.html" class="btn btn-dark">Voltar</a> 
+			<a href="Index.jsp" class="btn btn-dark">Voltar</a> 
 			</form>
 		</div>
 		<script src="js/jquery.min.js"></script>

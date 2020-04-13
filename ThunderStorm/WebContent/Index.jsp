@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +9,7 @@
     	<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body background="src/imagens/fundo.jpg">
+		<c:import url="Menu.jsp"/>
 		<div id="main" class="container">
   			<h3 class="page-header">Login</h3>
 			<form method="get">
@@ -26,7 +29,7 @@
 				<div id="actions" class="row">
 					<div class="col-md-12">
 						<input class="btn btn-primary" type="submit" value="Logar">
-						<a href="cadastro.html" class="btn btn-secondary" style="color:black ">Cadastre-se</a>
+						<a href="Cadastro.jsp" class="btn btn-secondary" style="color:black ">Cadastre-se</a>
 					</div>
 				</div>
 			</form>
