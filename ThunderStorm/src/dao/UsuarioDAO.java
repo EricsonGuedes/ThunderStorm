@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 import model.Usuario;
 
 public class UsuarioDAO {
@@ -130,6 +129,36 @@ public class UsuarioDAO {
 			System.out.print(e1.getStackTrace());
 		}
 		return usuario;
+	}
+	
+	public boolean check(String username, String senha){
+		
+		String sqlSelect = "SELECT * FROM usuario WHERE username=? and senha=?";
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+				
+				// Iniciando criptografia
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				byte messageDigest[] = md.digest(senha.getBytes("UTF-8"));
+				
+				StringBuilder sb = new StringBuilder();
+				
+				for(byte b : messageDigest) {
+					sb.append(String.format("%02X", 0xFF & b));
+				}
+				String senhaCript = sb.toString();
+				//Finalização da criptografia
+
+				stm.setString(1, username);
+				stm.setString(2, senhaCript);
+				ResultSet rs = stm.executeQuery();
+				if(rs.next()) {
+					return true;
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

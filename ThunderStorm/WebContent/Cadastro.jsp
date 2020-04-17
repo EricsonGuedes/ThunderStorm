@@ -12,7 +12,7 @@
 		<c:import url="Menu.jsp"/>
 		<div id="main" class="container">
 			<h2 class="page-header">Cadastro</h2>
-			<form action ="ManterUsuario.do" method="get">
+			<form action ="ManterUsuario.do" method="post">
 				<div class="row">
 					<div class="form-group col-md-4 mb-3">
 						<label for="nome">Nome:</label>
@@ -38,9 +38,9 @@
 						<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Sexo:</label>
 					  	<select class="custom-select my-1 mr-sm-2" id="sexo" name="sexo">
 						    <option selected>Escolha o sexo...</option>
-						    <option value="M" id="M" name="M">Masculino</option>
-						    <option value="F" id="F" name="F">Feminino</option>
-						    <option value="X" id="X" name="X">Prefiro não dizer</option>
+						    <option value="M" id="M">Masculino</option>
+						    <option value="F" id="F">Feminino</option>
+						    <option value="X" id="X">Prefiro não dizer</option>
 					  	</select>
 					</div>
 					<div class="form-group col-md-6">
@@ -94,7 +94,7 @@
 				    </div>
 			  </div>
 			<input type="submit" value="Criar" name="acao" class="btn btn-primary">
-			<a href="Index.jsp" class="btn btn-dark">Voltar</a> 
+			<a href="Login.jsp" class="btn btn-dark">Voltar</a> 
 			</form>
 		</div>
 		<script src="js/jquery.min.js"></script>

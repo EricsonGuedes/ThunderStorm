@@ -10,9 +10,10 @@
 	</head>
 	<body background="src/imagens/fundo.jpg">
 		<c:import url="Menu.jsp"/>
+		<% session.invalidate(); %>
 		<div id="main" class="container">
   			<h3 class="page-header">Login</h3>
-			<form method="get">
+			<form action ="ManterLogado.do" method="post">
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="usuario">Usuário</label>
