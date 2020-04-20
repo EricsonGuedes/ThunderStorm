@@ -15,6 +15,19 @@ public class Usuario {
 	public Usuario() {
 	}
 	
+	public Usuario(int id, String nome, String sobrenome, String username, String email, String senha, String sexo, String cep, String cidade, String estado) {
+		  this.id = id;
+		  this.nome = nome;
+		  this.sobrenome = sobrenome;
+		  this.username = username;
+		  this.email = email;
+		  this.senha = senha;
+		  this.sexo = sexo;
+		  this.cep = cep;
+		  this.cidade = cidade;
+		  this.estado = estado;
+		}
+
 	public int getId() {
 		return id;
 	}

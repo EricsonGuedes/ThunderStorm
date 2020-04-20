@@ -22,6 +22,9 @@ public class UsuarioService {
 	public Usuario carregar(int id){
 		return dao.carregar(id);
 	}
-
+	
+	public Usuario check(String username, String senha){
+		return dao.check(username, senha);
+	}
 	
 }

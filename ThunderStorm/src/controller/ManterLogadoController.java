@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.UsuarioDAO;
+import service.UsuarioService;
 
 @WebServlet("/ManterLogado.do")
 public class ManterLogadoController extends HttpServlet {
@@ -19,16 +19,14 @@ public class ManterLogadoController extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		
-		UsuarioDAO user = new UsuarioDAO();
+		UsuarioService user = new UsuarioService();
 		
-		if (user.check(usuario, senha)) {
+		if (user.check(usuario, senha) != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("username", usuario); 
-			response.sendRedirect("AreaLogada.jsp");
+			session.setAttribute("usuario", user.check(usuario, senha)); 
+			response.sendRedirect("Usuario.jsp");
 		}else {
 			response.sendRedirect("Login.jsp");
 		}
 	}
-
-
 }

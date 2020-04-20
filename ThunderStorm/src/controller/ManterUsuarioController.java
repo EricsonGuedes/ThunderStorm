@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,11 +54,8 @@ public class ManterUsuarioController extends HttpServlet {
 		us.criar(usuario);
 		usuario = us.carregar(usuario.getId());
 		
-		request.setAttribute("usuario", usuario);
-		
-		RequestDispatcher view = 
-        request.getRequestDispatcher("Usuario.jsp");
-        view.forward(request, response);
+		response.sendRedirect("Login.jsp");
+        
 	}
 
 }

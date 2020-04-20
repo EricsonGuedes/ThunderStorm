@@ -131,8 +131,7 @@ public class UsuarioDAO {
 		return usuario;
 	}
 	
-	public boolean check(String username, String senha){
-		
+	public Usuario check(String username, String senha){	
 		String sqlSelect = "SELECT * FROM usuario WHERE username=? and senha=?";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
@@ -152,13 +151,14 @@ public class UsuarioDAO {
 				stm.setString(1, username);
 				stm.setString(2, senhaCript);
 				ResultSet rs = stm.executeQuery();
+				
 				if(rs.next()) {
-					return true;
+					return new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("sobrenome"),rs.getString("username"), rs.getString("email"), rs.getString("senha"), rs.getString("sexo"), rs.getString("cep"), rs.getString("cidade"), rs.getString("estado"));
 				}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
+		return null;
 	}
 
 }

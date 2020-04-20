@@ -14,6 +14,12 @@
 </head>
 
 <body>
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidade");
+		if(session.getAttribute("usuario") == null){
+			response.sendRedirect("Login.jsp");
+		}
+	%>
         <!-- Barra superior com os menus de navegação -->
 		
         <!-- Container Principal -->
