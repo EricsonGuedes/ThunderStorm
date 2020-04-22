@@ -8,9 +8,9 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet">
     	<link href="css/style.css" rel="stylesheet">
 	</head>
-	<body background="src/imagens/fundo.jpg">
+	<body>
+		<% session.invalidate();%>
 		<c:import url="Menu.jsp"/>
-		<% session.invalidate(); %>
 		<div id="main" class="container">
   			<h3 class="page-header">Login</h3>
 			<form action ="ManterLogado.do" method="post">

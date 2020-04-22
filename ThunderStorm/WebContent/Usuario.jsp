@@ -32,7 +32,7 @@
 		}
 	%>
         <!-- Barra superior com os menus de navegação -->
-		
+		<c:import url="Menu.jsp"/>
         <!-- Container Principal -->
         <div id="main" class="container">
             <h3 class="page-header">Visualizar Usuario #${usuario.id}</h3>
@@ -65,9 +65,9 @@
 				
 				    <span data-weather="city">Obtendo cidade</span> <span data-weather="temp">00</span>º C<br>
 				    <span data-weather="description">Obtendo tempo...</span><br>
-				    Nascer do Sol: <span data-weather="sunrise">00:00</span> - Pôr do Sol: <span data-weather="sunset">00:00</span><br>
-				    Velocidade do vento: <span data-weather="wind_speedy">-- km/h</span><br>
-				    <img src="http://assets.api.hgbrasil.com/weather/images/44.png" data-weather="image"><br>
+				    <small class="form-text text-muted">Nascer do Sol: <span data-weather="sunrise">00:00</span> - Pôr do Sol: <span data-weather="sunset">00:00</span><br></small>
+				    <small class="form-text text-muted">Velocidade do vento: <span data-weather="wind_speedy">-- km/h</span><br></small>
+				    <img src="http://assets.api.hgbrasil.com/weather/images/44.png" data-weather="image">
     			</div>
             </div>
             <hr />
