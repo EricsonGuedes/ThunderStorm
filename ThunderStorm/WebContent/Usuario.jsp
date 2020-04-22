@@ -8,7 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Visualizar Usuario</title>
+	
+	<script src="js/hg-weather.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+      body { font-family: Arial; }
+      .hg-weather { border-radius: 3px; padding: 15px; display: inline-block; }
 
+      .hg-weather.clear_day { background-color: #217CAF; color: white; }
+      .hg-weather.clear_night { background-color: #555; color: white; }
+      .hg-weather.cloudly_day, .hg-weather.fog, .hg-weather.rain, .hg-weather.storm { background-color: #ddd; }
+      .hg-weather.cloudly_night { background-color: #444; color: white; }
+    </style>
+	
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -49,6 +60,15 @@
                         ${usuario.username}
                     </p>
                 </div>
+                <div class="hg-weather" data-key="299544a7" data-woeid="${usuario.cidade}">
+				    <span data-weather="message">Obtendo...<br></span>
+				
+				    <span data-weather="city">Obtendo cidade</span> <span data-weather="temp">00</span>º C<br>
+				    <span data-weather="description">Obtendo tempo...</span><br>
+				    Nascer do Sol: <span data-weather="sunrise">00:00</span> - Pôr do Sol: <span data-weather="sunset">00:00</span><br>
+				    Velocidade do vento: <span data-weather="wind_speedy">-- km/h</span><br>
+				    <img src="http://assets.api.hgbrasil.com/weather/images/44.png" data-weather="image"><br>
+    			</div>
             </div>
             <hr />
             <div id="actions" class="row">
@@ -57,6 +77,12 @@
                 </div>
             </div>
         </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        HGWeather.initialize();
+      });
+    </script>
+        
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 </body>
