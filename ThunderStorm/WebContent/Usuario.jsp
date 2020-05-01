@@ -60,7 +60,7 @@
                         ${usuario.username}
                     </p>
                 </div>
-                <div class="hg-weather" data-key="299544a7" data-woeid="${usuario.cidade}">
+                <div class="hg-weather" data-key="f40c0d01" data-woeid="${usuario.cidade}">
 				    <span data-weather="message">Obtendo...<br></span>
 				
 				    <span data-weather="city">Obtendo cidade</span> <span data-weather="temp">00</span>º C<br>
