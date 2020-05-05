@@ -147,14 +147,14 @@ html {
 			    <div class="col-md-4">
 			    	<br>
 			    	<br>
-			     	<c:import url="js/Imagem.jsp"/>      
+			     	<c:import url="APITempo/Imagem.jsp"/>      
 			    </div>
 			    <div class="col-md-8">
 			      <div class="card-body">
 			      	<strong class="d-inline-block mb-2 text-primary">Tempo</strong>
-			        <h3 class="mb-0"><c:import url="js/Cidade.jsp"/></h3>
-			        <div class="mb-1 text-muted"><c:import url="js/Descricao.jsp"/></div>
-			        <p class="card-text mb-auto"><c:import url="js/Complements.jsp"/></p>
+			        <h3 class="mb-0"><c:import url="APITempo/Cidade.jsp"/></h3>
+			        <div class="mb-1 text-muted"><c:import url="APITempo/Descricao.jsp"/></div>
+			        <p class="card-text mb-auto"><c:import url="APITempo/Complements.jsp"/></p>
 			      </div>
 			    </div>
 			  </div>
