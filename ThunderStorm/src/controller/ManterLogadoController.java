@@ -24,7 +24,7 @@ public class ManterLogadoController extends HttpServlet {
 		if (user.check(usuario, senha) != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", user.check(usuario, senha)); 
-			response.sendRedirect("Usuario.jsp");
+			response.sendRedirect("TelaInicial.jsp");
 		}else {
 			response.sendRedirect("Login.jsp");
 		}

@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Página Inicial</title>
+		<link rel="shortcut icon" href="Image/Icon.ico" type="image/x-icon" />
+		<title>Login</title>
 		<meta charset="utf-8">
 	    <link href="css/bootstrap.min.css" rel="stylesheet">
     	<link href="css/style.css" rel="stylesheet">
@@ -11,6 +12,7 @@
 	<body>
 		<% session.invalidate();%>
 		<c:import url="Menu.jsp"/>
+		<br>
 		<div id="main" class="container">
   			<h3 class="page-header">Login</h3>
 			<form action ="ManterLogado.do" method="post">

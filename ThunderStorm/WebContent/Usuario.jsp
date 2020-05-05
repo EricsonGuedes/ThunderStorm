@@ -4,6 +4,7 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="shortcut icon" href="Image/Icon.ico" type="image/x-icon" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +34,7 @@
 	%>
         <!-- Barra superior com os menus de navegação -->
 		<c:import url="Menu.jsp"/>
+		<br>
         <!-- Container Principal -->
         <div id="main" class="container">
             <h3 class="page-header">Visualizar Usuario #${usuario.id}</h3>
