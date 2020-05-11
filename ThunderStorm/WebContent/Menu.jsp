@@ -23,8 +23,8 @@
 		     			es.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Meus Endereços");
 		     			es.println("</a>");
 		     			es.println("<div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
-		     				es.println("<a class='dropdown-item' href='#'>Cadastrados</a>");
-		     				es.println("<a class='dropdown-item' href='Cadastro.jsp'>Cadastrar Novo</a>");	
+		     				es.println("<a class='dropdown-item' href='ListarEndereco.jsp'>Cadastrados</a>");
+		     				es.println("<a class='dropdown-item' href='Endereco.jsp'>Cadastrar Novo</a>");	
 		     			es.println("</div>");
 		     		es.println("</li>");
 		     		es.println("<li class='nav-item dropdown'>");
