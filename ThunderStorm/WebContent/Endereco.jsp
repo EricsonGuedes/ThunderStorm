@@ -22,7 +22,7 @@
 			<form action ="ManterCadastroEndereco.do" method="post">
 				<div class="row">
 					<!-- Colocar id de usuário real depoiss -->
-					<input type="hidden" name="idusuario" value="1" />
+					<input type="hidden" name="idusuario" value="${usuario.id }" />
 					<div class="form-group col-md-4 mb-3">
 						<label for="tipodeendereco">Tipo de Endereço:</label>
 						<input type="text" name="tipodeendereco" class="form-control" maxlength="20" required placeholder="Tipo de Endereço, EX: Academia, Casa, trabalho,etc...">

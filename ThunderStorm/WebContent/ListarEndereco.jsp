@@ -50,6 +50,7 @@
             <!-- Container Principal -->
             <div id="main" class="container">
                 <form action="listar_enderecos.do" method="post">
+                	<input type="hidden" name="idusuario" value="${usuario.id }" />
                     <div id="top" class="row">
                         <div class="col-md-3">
                             <h2>Endereços</h2>

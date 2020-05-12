@@ -35,24 +35,21 @@ public class ManterCadastroEndereco extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pId = request.getParameter("id");
 		String pAcao = request.getParameter("acao");
-		String pIdUsuario = request.getParameter("idusuario");
 		int id = -1;
-		int idUsuario = -1;
 		try {
 			id = Integer.parseInt(pId);
-			idUsuario = Integer.parseInt(pIdUsuario);
 		} catch (NumberFormatException e) {
 
 		}
 		
 		Endereco endereco = new Endereco();
 		endereco.setId(id);
-		endereco.setIdusuario(idUsuario);
 		EnderecoService es = new EnderecoService();
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();
 		
 		if (pAcao.equals("Criar") ||pAcao.equals("Alterar")) {	
+			int pIdUsuario = Integer.parseInt(request.getParameter("idusuario"));
 			String pTipoDeEndereco = request.getParameter("tipodeendereco");
 			String pCEP = request.getParameter("cep");
 			String pEndereco = request.getParameter("endereco");
@@ -61,6 +58,7 @@ public class ManterCadastroEndereco extends HttpServlet {
 			String pNumero = request.getParameter("numero");
 			String pComplemento = request.getParameter("complemento");
 			
+			endereco.setIdusuario(pIdUsuario);
 			endereco.setTipodeendereco(pTipoDeEndereco);
 			endereco.setCep(pCEP );
 			endereco.setEndereco(pEndereco);

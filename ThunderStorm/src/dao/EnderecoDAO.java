@@ -136,13 +136,13 @@ public class EnderecoDAO {
 		return lista;
 	}
 
-	public ArrayList<Endereco> pesquisarEndereco(String chave) {
+	public ArrayList<Endereco> pesquisarEndereco(int chave) {
 		Endereco endereco;
 		ArrayList<Endereco> lista = new ArrayList<>();
-		String sqlSelect = "SELECT id, idusuario,tipodeendereco, cep, endereco, estado, cidade, numero, complemento FROM Endereco where upper(endereco) like ?";
+		String sqlSelect = "SELECT id, idusuario,tipodeendereco, cep, endereco, estado, cidade, numero, complemento FROM Endereco where idusuario = ?";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
-			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			stm.setInt(1, chave);
 			try (ResultSet rs = stm.executeQuery();) {
 				while (rs.next()) {
 					endereco = new Endereco();

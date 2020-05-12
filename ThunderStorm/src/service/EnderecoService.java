@@ -26,8 +26,8 @@ public class EnderecoService {
 	public ArrayList<Endereco> listarEndereco(){
 		return dao.pesquisarEndereco();
 	}
-	public ArrayList<Endereco> listarEndereco(String chave){
-		return dao.pesquisarEndereco(chave);
+	public ArrayList<Endereco> listarEndereco(int idUsuario){
+		return dao.pesquisarEndereco(idUsuario);
 	}
 	
 }

@@ -28,16 +28,14 @@ public class ListarCadastroController extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String chave = request.getParameter("data[search]");
+		int idUsuario = Integer.parseInt(request.getParameter("idusuario"));
 		String acao = request.getParameter("acao");
 		EnderecoService enderecoService = new EnderecoService();
 		ArrayList<Endereco> lista = null;
 		HttpSession session = request.getSession();
 		if (acao.equals("buscar")) {
-			if (chave != null && chave.length() > 0) {
-				lista = enderecoService.listarEndereco(chave);
-			} else {
-				lista = enderecoService.listarEndereco();
+			if (idUsuario > 0) {
+				lista = enderecoService.listarEndereco(idUsuario);
 			}
 			session.setAttribute("lista", lista);
 		} else if (acao.equals("reiniciar")) {
