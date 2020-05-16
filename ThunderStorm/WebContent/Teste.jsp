@@ -67,18 +67,15 @@ body {
 <body class="text-center">
 	<% session.invalidate();%>
 		<form id="main" class="form-signin" action ="ManterLogado.do" method="post">
-			<br>
-			<br>
 			<img class="mb-4" src="Image/logolight.png" alt=""	width="300" height="90"> 
 			<label for="usuario" class="sr-only">Usuário</label>
-			<input type="text" name="usuario"	class="form-control" placeholder="Usuário" required="" autofocus="">
+			<input type="email" name="usuario"	class="form-control" placeholder="Usuário" required="" autofocus="">
 			<label for="senha" class="sr-only">Senha</label> 
 			<input type="password" name="senha" class="form-control" placeholder="Senha" required="">
-			<br>
+			
 			<div id="actions">
 				<div>
 					<input class="btn btn-primary btn-block" type="submit" value="Entrar">
-					<a href="Cadastro.jsp" class="btn btn-secondary btn-block">Cadastre-se</a>
 				</div>
 			</div>
 		</form>
