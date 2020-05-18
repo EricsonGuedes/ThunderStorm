@@ -5,6 +5,35 @@
 <html lang="pt-br">
 
 <head>
+	<script>
+//some default pre init
+var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
+
+//PushBots ApplicationId (required)
+PB.app_id = "5ec184b640e6f7440d1a6ca3";
+//Your domain name, must be HTTPS or localhost  (required)
+PB.domain = "WEBSITE_URL";
+//Update and uncomment it if you are using custom safari certificate for your app
+PB.safari_push_id = "web.com.pushbots.safaripush";
+//****************************************
+
+PB.logging_enabled = true;
+PB.auto_subscribe = true;
+
+//Custom worker and manifest URL
+//PB.worker_url = PB.domain + "/pushbots-worker.js";
+
+//Welcome notification message
+PB.welcome = {title:"Welcome ",message:"Thanks for subscribing!", url :PB.domain};
+
+function sendNotification(){
+      PB.register();
+      PB.q.push(["sendNotification", {title:"Hey ",message:"Why not?", url :"WEBSITE_URL"}]);
+}
+
+</script>
+
+<script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
 <link rel="shortcut icon" href="Image/Icon.ico" type="image/x-icon" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
