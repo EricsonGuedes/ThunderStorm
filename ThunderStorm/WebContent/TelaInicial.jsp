@@ -182,7 +182,7 @@ body {
 		</a>
 	</div>
 
-	<!-- Tempo
+	
 	<br>
 	<hr class="container">
 	<br>
@@ -205,7 +205,7 @@ body {
 			    </div>
 			  </div>
 			</div>
-		</div> -->
+		</div>
 	<br id="Mapa">	
 	<hr>
 	<br>
