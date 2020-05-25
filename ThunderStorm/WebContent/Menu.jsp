@@ -17,7 +17,7 @@
 	    	if (session.getAttribute("usuario") != null){
 	    		
 		     		es.println("<li class='nav-item'>");	
-		     			es.println("<a href='TelaInicial.jsp' class='nav-link' >Página Inicial <span class='sr-only'>(current)</span></a>");
+		     			es.println("<a href='TelaInicial.jsp' class='nav-link' >Página Inicial<span class='sr-only'>(current)</span></a>");
 		     		es.println("</li>");
 		     		es.println("<li class='nav-item dropdown'>");
 		     			es.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Meus Endereços");
@@ -36,6 +36,9 @@
 	     				es.println("<a class='dropdown-item' href='Login.jsp'>Sair</a>");
 	     			es.println("</div>");
 	     		es.println("</li>");
+	     		es.println("<li class='nav-item' > ");	
+     			es.println("<a href='TelaInicial.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
+     		es.println("</li>");
 	     		
 	    	}
     			es.println("</ul>");

@@ -30,50 +30,66 @@
 		crossorigin="anonymous"></script>
 </footer>
 
- API 
+ <!--API tempo--> 
 <script src="js/hg-weather.js" type="text/javascript"></script>
-<!-- <style type="text/css" media="screen">
-body {
-	font-family: Arial;
-}
 
-.hg-weather {
-	border-radius: 3px;
-	padding: 15px;
-	display: inline-block;
-}
-
-.hg-weather.clear_day {
-	background-color: #217CAF;
-	color: white;
-}
-
-.hg-weather.clear_night {
-	background-color: #555;
-	color: white;
-}
-
-.hg-weather.cloudly_day, .hg-weather.fog, .hg-weather.rain, .hg-weather.storm
-	{
-	background-color: #ddd;
-}
-
-.hg-weather.cloudly_night {
-	background-color: #444;
-	color: white;
-}
-</style>-->
 <style>
 html {
 	scroll-behavior: smooth;
 }
 
-#tempo {
+#Tempo 
+#Mapa{
+}
+body {
+	background-color: #F7F9F9;
 	
 }
 </style>
 
+ <!--API Mapa-->
+ 	<script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript"></script>
+    
+    <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
+    <script src="http://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
+    <script type="text/javascript">
+      function CalculaDistancia() {
+        $('#litResultado').html('Aguarde...');
+        // Instancia o DistanceMatrixService.
+        var service = new google.maps.DistanceMatrixService();
+        // Executa o DistanceMatrixService.
+        service.getDistanceMatrix({
+            origins: [$("#txtOrigem").val()], // Origem
+            destinations: [$("#txtDestino").val()], // Destino
+            travelMode: google.maps.TravelMode.DRIVING, // Modo (DRIVING | WALKING | BICYCLING)
+            unitSystem: google.maps.UnitSystem.METRIC // Sistema de medida (METRIC | IMPERIAL)
+        }, callback); // Vai chamar o callback
+      }
+
+      // Tratar o retorno do DistanceMatrixService
+      function callback(response, status) {
+        // Verificar o status.
+        if (status != google.maps.DistanceMatrixStatus.OK) { // Se o status não for "OK".
+            $("#litResultado").html(status);
+        } else { // Se o status for "OK".
+            $("#litResultado").html("&nbsp;"); // Remove o "aguarde".
+
+            // Popula os campos.
+            $("#txtOrigemResultado").val(response.originAddresses);
+            $("#txtDestinoResultado").val(response.destinationAddresses);
+            $("#txtDistancia").val(response.rows[0].elements[0].distance.text);
+            var tempo = response.rows[0].elements[0].duration.text;
+            tempo = tempo.replace("day", "dia").replace("hour", "hora").replace("min", "minuto");
+            $("#txtTempo").val(tempo);
+
+            //Atualizar o mapa.
+            $("#map").attr("src", "https://maps.google.com/maps?saddr=" + response.originAddresses + "&daddr=" + response.destinationAddresses + "&output=embed");
+        }
+      }
+    </script>
 </head>
+
 
 <body>
 	<!-- Content -->
@@ -111,7 +127,7 @@ html {
 					<h1>Se preparando para sair?</h1>
 					<h4 class="lead">Antes de sair, informe-se quanto ao tempo na
 						sua região.</h4>
-					<a class="btn btn-outline-light btn-md" href="#Tempo" role="button">Como
+					<a  id="Tempo" class="btn btn-outline-light btn-md" href="#Tempo" role="button">Como
 						está o clima</a>
 				</div>
 			</div>
@@ -119,9 +135,9 @@ html {
 				<img src="Image/image3.jpg" class="d-block w-100" alt="...">
 				<div class="carousel-caption text-right d-none d-lg-block">
 					<h1 class=>Para onde vamos hoje?</h1>
-					<h4 class="lead">Defina a melhor rota para seu antes de irmos.</h4>
+					<h4 class="lead">Defina a melhor rota para seu destino antes de irmos.</h4>
 					<a class="btn btn-outline-light btn-md" href="#" role="button">Meus
-						lugares</a> <a class="btn btn-dark btn-md" href="#" role="button">Novos
+						lugares</a> <a class="btn btn-dark btn-md" href="#Mapa" role="button">Novos
 						horizontes</a>
 				</div>
 			</div>
@@ -137,29 +153,65 @@ html {
 		</a>
 	</div>
 
-	<!-- Tempo -->
-	<br id="Tempo">
+	<!-- Tempo
+	<br>
 	<hr class="container">
 	<br>
-		<div  class="container">
-			<div class="card mb-3" style="max-width: 540px;">
+		<div class="container" >
+			<div class="card">
 			  <div class="row no-gutters">
-			    <div class="col-md-4">
+			    <div class="col-sm-2"></div>
+			    <div class="col-md-3">
 			    	<br>
 			    	<br>
 			     	<c:import url="APITempo/Imagem.jsp"/>      
 			    </div>
-			    <div class="col-md-8">
+			    <div class="col-md-7">
 			      <div class="card-body">
-			      	<strong class="d-inline-block mb-2 text-primary">Tempo</strong>
+			        <strong class="d-inline-block mb-2 text-primary">Tempo</strong>
 			        <h3 class="mb-0"><c:import url="APITempo/Cidade.jsp"/></h3>
-			        <div class="mb-1 text-muted"><c:import url="APITempo/Descricao.jsp"/></div>
+			        <div id="Mapa" class="mb-1 text-muted"><c:import url="APITempo/Descricao.jsp"/></div>
 			        <p class="card-text mb-auto"><c:import url="APITempo/Complements.jsp"/></p>
 			      </div>
 			    </div>
 			  </div>
 			</div>
+		</div> -->
+	<br id="Mapa">	
+	<hr>
+	<br>
+	<form class="container" action="http://www.example.com/url" method="post">
+	  <h3 class="d-inline-block mb-2 text-primary">Vamos lá</h3><br><br>
+      <!--<div><span>Pesquisa:</span></div> -->
+	    <div class="row">
+	     	<div class="form-group col-auto">
+	      		<label for="txtOrigem"><strong>Onde você está?</strong></label>
+	      		<input class="form-control" name="pesquisaOrigem" type="text" id="txtOrigem" class="field" style="width: 400px"  />
+		    </div>
+		    <div class="form-group col-auto">  	
+		      	<label for="txtDestino"><strong>Onde vamos?</strong></label>
+		      	<input class="form-control" name="pesquisaDestino" type="text" id="txtDestino" class="field" style="width: 400px" />
+      		</div>    		
 		</div>
-</div>
+      	<input class="btn btn-outline-primary" type="button" value="Calcular distancia" onclick="CalculaDistancia()"/>
+      	
+      	<div><span id="litResultado">&nbsp;</span></div>
+	  </div>
+      <div><span>Resposta:</span></div>
+      <label for="txtOrigemResultado"><strong>Endere&ccedil;o de origem</strong></label>
+      <input name="resultadoOrigem" readonly="readonly" type="text" id="txtOrigemResultado" class="field" style="width: 400px" value="" />
+      <label for="txtDestinoResultado"><strong>Endere&ccedil;o de destino</strong></label>
+      <input name="resultadoDestino" readonly="readonly" type="text" id="txtDestinoResultado" class="field" style="width: 400px" value="" />
+      <br />
+      <label for="txtDistancia"><strong>Dist&acirc;ncia</strong></label>
+      <input name="distancia" readonly="readonly" type="text" id="txtDistancia" value="" /> 
+      <label for="txtTempo"><strong>Tempo</strong></label>
+      <input name="tempo" readonly="readonly" type="text" id="txtTempo" value="" />
+      <input type="submit" value="Enviar para o servidor" />
+    </form>
+
+    <div style="padding: 10px 0 0; clear: both">
+      <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=S&atilde;o Paulo&daddr=Rio de Janeiro&output=embed"></iframe>
+    </div>
 </body>
 </html>
