@@ -55,7 +55,7 @@
                             <div class="form-group col-md-12">
                                 <div class="form-group col-md-4 mb-3">
 						<label for="tipodeendereco">Tipo de Endereço:</label>
-						<input type="text" name="tipodeendereco" value=${endereco.tipodeendereco } class="form-control" maxlength="20" required placeholder="Tipo de Endereço, EX: Academia, Casa, trabalho,etc...">
+						<input type="text" name="tipodeendereco" value='${endereco.tipodeendereco }' class="form-control" maxlength="20" required placeholder="Tipo de Endereço, EX: Academia, Casa, trabalho,etc...">
 					</div>
 					<div class="form-group col-md-4 mb-3">
 						<label for="cep">CEP:</label>
@@ -68,7 +68,7 @@
 					<div class="col-md-3 mb-3">
 				      	<label for="validationDefault04">Estado</label>
 				      	<select class="custom-select" id="validationDefault04" name="estado" required>
-				        	<option selected value="${endereco.estado }" >Selecione o estado</option>
+				        	<option selected value='${endereco.estado }' >Selecione o estado</option>
 				        	<option value="ac">AC</option>
 							<option value="al">AL</option>
 							<option value="ap">AP</option>
@@ -108,7 +108,7 @@
 					</div>
 					<div class="form-group col-md-4 mb-3">
 						<label for="complemento">Complemento:</label>
-						<input type="text" name="complemento" class="form-control" value=${endereco.complemento } maxlength="20" required placeholder="Complemento">
+						<input type="text" name="complemento" class="form-control" value='${endereco.complemento }' maxlength="20" placeholder="Complemento">
 					</div>
 				</div>
 			</div>

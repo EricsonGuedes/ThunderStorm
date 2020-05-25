@@ -8,7 +8,42 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
-    		<script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript"></script>
+    		<script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript">
+    		button.onclick = function() {
+    			  var startPos;
+    			  var element = document.getElementById("nudge");
+
+    			  var showNudgeBanner = function() {
+    			    nudge.style.display = "block";
+    			  };
+
+    			  var hideNudgeBanner = function() {
+    			    nudge.style.display = "none";
+    			  };
+
+    			  var nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
+
+    			  var geoSuccess = function(position) {
+    			    hideNudgeBanner();
+    			    // We have the location, don't display banner
+    			    clearTimeout(nudgeTimeoutId); 
+
+    			    // Do magic with location
+    			    startPos = position;
+    			    document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+    			    document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+    			  };
+    			  var geoError = function(error) {
+    			    switch(error.code) {
+    			      case error.TIMEOUT:
+    			        // The user didn't accept the callout
+    			        showNudgeBanner();
+    			        break;
+    			  };
+
+    			  navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    			};
+    		</script>
             <title>Visualizar Endereço</title>
 
             <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,9 +74,25 @@
 				response.sendRedirect("Login.jsp");
 			}
 			%>
-			
+			<script src="http://maps.google.com/maps/api/js?sensor="></script>
 			<script src="http://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
     <script type="text/javascript">
+    
+    document.addEventListener('DOMContentLoaded', function(){
+
+        
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            var latitude   = position.coords.latitude;
+            var longitude  = position.coords.longitude;
+            var coordinate = new google.maps.LatLng(latitude, longitude);
+
+            document.getElementById('txtOrigem').value = "" + latitude + "," + longitude + "";
+
+            
+
+        });
+    });
       function CalculaDistancia() {
         $('#litResultado').html('Aguarde...');
         // Instancia o DistanceMatrixService.
@@ -64,7 +115,7 @@
             $("#litResultado").html("&nbsp;"); // Remove o "aguarde".
 
             // Popula os campos.
-            $("#txtOrigemResultado").val(response.originAddresses);
+            $("#txtOrigemResultado").val('Você está em ' + response.originAddresses);
             $("#txtDestinoResultado").val(response.destinationAddresses);
             $("#txtDistancia").val(response.rows[0].elements[0].distance.text);
             var tempo = response.rows[0].elements[0].duration.text;
@@ -91,10 +142,10 @@
                                 ${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado } -
                                 <strong>Cep: </strong> ${endereco.cep } 
                                 <p> <strong>Complemento: </strong>${endereco.complemento }</p>
-                                <label for="txtOrigem"><strong>Onde você está?</strong></label>
+                                <strong id="txtOrigemResultado"></strong>
                                 <div class="row">
-					      		<input class="form-control" name="pesquisaOrigem" type="text" id="txtOrigem" class="field" style="width: 400px"  />
-					      		<input class="btn btn-outline-primary" type="button" value="Calcular distancia" onclick="CalculaDistancia()"/>
+					      		<input class="form-control" name="pesquisaOrigem" type="hidden" id="txtOrigem" class="field" style="width: 400px"  />
+					      		<input class="btn btn-outline-primary" type="button" value="Calcular Rota" onclick="CalculaDistancia()"/>
 					      		</div>
 					      		<input class="form-control" name="pesquisaDestino" type="hidden" id="txtDestino" class="field" style="width: 400px" value='${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado }' />
                         </div>
