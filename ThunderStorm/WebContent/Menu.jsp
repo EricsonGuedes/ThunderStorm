@@ -28,17 +28,13 @@
 		     			es.println("</div>");
 		     		es.println("</li>");
 		     		es.println("<li class='nav-item dropdown'>");
-	     			es.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Meu Perfil");
-	     			es.println("</a>");
-	     			es.println("<div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
-	     				es.println("<a class='dropdown-item' href='Usuario.jsp'>Gerenciar conta</a>");
-	     				es.println("<a class='dropdown-item' href='#'>Alterar senha</a>");
-	     				es.println("<a class='dropdown-item' href='Login.jsp'>Sair</a>");
-	     			es.println("</div>");
-	     		es.println("</li>");
+	     			es.println("</li>");
 	     		es.println("<li class='nav-item' > ");	
      			es.println("<a href='TelaInicial.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
      		es.println("</li>");
+     		es.println("<li class='nav-item' > ");	
+ 			es.println("<a href='Login.jsp' class='nav-link' >Sair<span class='sr-only'>(current)</span></a>");
+ 		es.println("</li>");
 	     		
 	    	}
     			es.println("</ul>");

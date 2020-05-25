@@ -5,7 +5,20 @@
 <html lang="pt-br">
 
 <head>
-	<script>
+<script type="text/javascript">
+    var _egoiwp = _egoiwp || {};
+    (function(){
+    var u="https://cdn-static.egoiapp2.com/";
+    _egoiwp.code = "d8d1b87606d36cc0ca068c3e45957568";
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=u+'webpush.js';
+    s.parentNode.insertBefore(g,s);
+    })();
+	</script>
+<script>
 //some default pre init
 var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
 
@@ -33,7 +46,8 @@ function sendNotification(){
 
 </script>
 
-<script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
+<script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript"
+	onload="PB.init()" async></script>
 <link rel="shortcut icon" href="Image/Icon.ico" type="image/x-icon" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +73,7 @@ function sendNotification(){
 		crossorigin="anonymous"></script>
 </footer>
 
- <!--API tempo--> 
+<!--API tempo-->
 <script src="js/hg-weather.js" type="text/javascript"></script>
 
 <style>
@@ -68,23 +82,29 @@ html {
 }
 
 #Tempo 
-#Mapa{
+#Mapa {
+	
 }
+
 body {
 	background-color: #F7F9F9;
-	
 }
 </style>
 
- <!--API Mapa-->
- 	<script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
-  	<script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript"></script>
-    
-    <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
-    <script src="http://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
-    <script type="text/javascript">
+<!--API Mapa-->
+<script src="http://code.jquery.com/jquery-1.8.1.js"
+	type="text/javascript"></script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key="
+	type="text/javascript"></script>
+
+<!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
+<script
+	src="http://maps.google.com/maps/api/js?key="
+	type="text/javascript"></script>
+<script type="text/javascript">
       function CalculaDistancia() {
-        $('#litResultado').html('Aguarde...');
+        $('#litResultado').html('Aguarde ${usuario.nome}...');
         // Instancia o DistanceMatrixService.
         var service = new google.maps.DistanceMatrixService();
         // Executa o DistanceMatrixService.
@@ -105,12 +125,11 @@ body {
             $("#litResultado").html("&nbsp;"); // Remove o "aguarde".
 
             // Popula os campos.
-            $("#txtOrigemResultado").val(response.originAddresses);
-            $("#txtDestinoResultado").val(response.destinationAddresses);
-            $("#txtDistancia").val(response.rows[0].elements[0].distance.text);
+            $("#txtOrigemResultado").html('Você está em ' + response.originAddresses);
+            $("#txtDestinoResultado").html(' está indo para ' + response.destinationAddresses);
+            $("#txtDistancia").html('${usuario.nome}, para percorrer a distância de ' + response.rows[0].elements[0].distance.text);
             var tempo = response.rows[0].elements[0].duration.text;
-            tempo = tempo.replace("day", "dia").replace("hour", "hora").replace("min", "minuto");
-            $("#txtTempo").val(tempo);
+            $("#txtTempo").html(' você gastará ' + tempo);
 
             //Atualizar o mapa.
             $("#map").attr("src", "https://maps.google.com/maps?saddr=" + response.originAddresses + "&daddr=" + response.destinationAddresses + "&output=embed");
@@ -156,16 +175,17 @@ body {
 					<h1>Se preparando para sair?</h1>
 					<h4 class="lead">Antes de sair, informe-se quanto ao tempo na
 						sua região.</h4>
-					<a  id="Tempo" class="btn btn-outline-light btn-md" href="#Tempo" role="button">Como
-						está o clima</a>
+					<a id="Tempo" class="btn btn-outline-light btn-md" href="#Tempo"
+						role="button">Como está o clima</a>
 				</div>
 			</div>
 			<div class="carousel-item" data-interval="5000">
 				<img src="Image/image3.jpg" class="d-block w-100" alt="...">
 				<div class="carousel-caption text-right d-none d-lg-block">
 					<h1 class=>Para onde vamos hoje?</h1>
-					<h4 class="lead">Defina a melhor rota para seu destino antes de irmos.</h4>
-					<a class="btn btn-outline-light btn-md" href="#" role="button">Meus
+					<h4 class="lead">Defina a melhor rota para seu destino antes
+						de irmos.</h4>
+					<a class="btn btn-outline-light btn-md" href="ListarEndereco.jsp" role="button">Meus
 						lugares</a> <a class="btn btn-dark btn-md" href="#Mapa" role="button">Novos
 						horizontes</a>
 				</div>
@@ -182,65 +202,85 @@ body {
 		</a>
 	</div>
 
-	
+
 	<br>
 	<hr class="container">
 	<br>
-		<div class="container" >
-			<div class="card">
-			  <div class="row no-gutters">
-			    <div class="col-sm-2"></div>
-			    <div class="col-md-3">
-			    	<br>
-			    	<br>
-			     	<c:import url="APITempo/Imagem.jsp"/>      
-			    </div>
-			    <div class="col-md-7">
-			      <div class="card-body">
-			        <strong class="d-inline-block mb-2 text-primary">Tempo</strong>
-			        <h3 class="mb-0"><c:import url="APITempo/Cidade.jsp"/></h3>
-			        <div id="Mapa" class="mb-1 text-muted"><c:import url="APITempo/Descricao.jsp"/></div>
-			        <p class="card-text mb-auto"><c:import url="APITempo/Complements.jsp"/></p>
-			      </div>
-			    </div>
-			  </div>
+	<div class="container">
+		<div class="shadow p-3 mb-5 bg-white rounded">
+			<div class="row no-gutters">
+				<div class="col-sm-2"></div>
+				<div class="col-md-3">
+					<br> <br>
+					<c:import url="APITempo/Imagem.jsp" />
+				</div>
+				<div class="col-md-7">
+					<div class="card-body">
+						<strong class="d-inline-block mb-2 text-primary">Tempo</strong>
+						<h3 class="mb-0">
+							<c:import url="APITempo/Cidade.jsp" />
+						</h3>
+						<div class="mb-1 text-muted">
+							<c:import url="APITempo/Descricao.jsp" />
+						</div>
+						<p class="card-text mb-auto">
+							<c:import url="APITempo/Complements.jsp" />
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	<br id="Mapa">	
-	<hr>
+	</div>
+	<hr class="container" id="Mapa">
 	<br>
-	<form class="container" action="http://www.example.com/url" method="post">
-	  <h3 class="d-inline-block mb-2 text-primary">Vamos lá</h3><br><br>
-      <!--<div><span>Pesquisa:</span></div> -->
-	    <div class="row">
-	     	<div class="form-group col-auto">
-	      		<label for="txtOrigem"><strong>Onde você está?</strong></label>
-	      		<input class="form-control" name="pesquisaOrigem" type="text" id="txtOrigem" class="field" style="width: 400px"  />
-		    </div>
-		    <div class="form-group col-auto">  	
-		      	<label for="txtDestino"><strong>Onde vamos?</strong></label>
-		      	<input class="form-control" name="pesquisaDestino" type="text" id="txtDestino" class="field" style="width: 400px" />
-      		</div>    		
+	<div class="container">
+		<div class="shadow p-3 mb-5 bg-white rounded">
+			<form class="container" action="http://www.example.com/url"
+				method="post">
+				<br>
+				<div class="row">
+					<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+					<h3 class="d-inline-block mb-2 text-primary">Vamos lá</h3>
+				</div>
+				<br>
+				<!--<div><span>Pesquisa:</span></div> -->
+				<div class="row">
+					<div class="form-group col-md-1"></div>
+					<div class="form-group col-md-4">
+						<label for="txtOrigem"><strong>Onde você está?</strong></label> <input
+							class="form-control" name="pesquisaOrigem" type="text"
+							id="txtOrigem" class="field" style="width: 350px" />
+					</div>
+					<div class="form-group col-md-7">
+						<label for="txtDestino"><strong>Onde vamos?</strong></label>
+						<div class="row">
+							<strong>&nbsp;&nbsp;&nbsp;</strong> <input class="form-control"
+								name="pesquisaDestino" type="text" id="txtDestino" class="field"
+								style="width: 350px" /> <input class="btn btn-outline-primary"
+								type="button" value="Calcular rota" onclick="CalculaDistancia()" />
+						</div>
+					</div>
+				</div>
+				<div>
+					<span id="litResultado">&nbsp;</span>
+				</div>
+				<div class="container">
+					<div class="container" class="row">
+						<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> <strong
+							id="txtDistancia"></strong> <strong id="txtTempo"></strong>
+					</div>
+				</div>
+			</form>
+			<div class="container-fluid" align="center"
+				style="padding: 10px 0 0; clear: both">
+				<iframe align="center" class="rounded-lg" width="900" scrolling="no"
+					height="500" frameborder="0" id="map" marginheight="0"
+					marginwidth="0"
+					src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
+			</div>
+			<br>
 		</div>
-      	<input class="btn btn-outline-primary" type="button" value="Calcular distancia" onclick="CalculaDistancia()"/>
-      	
-      	<div><span id="litResultado">&nbsp;</span></div>
-	  </div>
-      <div><span>Resposta:</span></div>
-      <label for="txtOrigemResultado"><strong>Endere&ccedil;o de origem</strong></label>
-      <input name="resultadoOrigem" readonly="readonly" type="text" id="txtOrigemResultado" class="field" style="width: 400px" value="" />
-      <label for="txtDestinoResultado"><strong>Endere&ccedil;o de destino</strong></label>
-      <input name="resultadoDestino" readonly="readonly" type="text" id="txtDestinoResultado" class="field" style="width: 400px" value="" />
-      <br />
-      <label for="txtDistancia"><strong>Dist&acirc;ncia</strong></label>
-      <input name="distancia" readonly="readonly" type="text" id="txtDistancia" value="" /> 
-      <label for="txtTempo"><strong>Tempo</strong></label>
-      <input name="tempo" readonly="readonly" type="text" id="txtTempo" value="" />
-      <input type="submit" value="Enviar para o servidor" />
-    </form>
-
-    <div style="padding: 10px 0 0; clear: both">
-      <iframe width="900" scrolling="no" height="500" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
-    </div>
+	</div>
+	<br>
 </body>
 </html>
