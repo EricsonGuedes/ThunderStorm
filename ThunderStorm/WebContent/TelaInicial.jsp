@@ -240,7 +240,7 @@ body {
     </form>
 
     <div style="padding: 10px 0 0; clear: both">
-      <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=S&atilde;o Paulo&daddr=Rio de Janeiro&output=embed"></iframe>
+      <iframe width="900" scrolling="no" height="500" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
     </div>
 </body>
 </html>
