@@ -49,6 +49,7 @@
                     <!-- Formulario para alteração de clientes -->
                     <form action="ManterCadastroEndereco.do" method="post">
                         <!-- area de campos do form -->
+                        <input type="hidden" name="idusuario" value="${usuario.id }" />
                         <input type="hidden" name="id" value="${endereco.id }" />
                         <div class="row">
                             <div class="form-group col-md-12">
