@@ -29,6 +29,7 @@ public class ManterUsuarioController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String pNome = request.getParameter("nome");
 		String pSobrenome = request.getParameter("sobrenome");
 		String pUsername = request.getParameter("username");

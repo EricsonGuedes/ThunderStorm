@@ -33,6 +33,7 @@ public class ManterCadastroEndereco extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String pId = request.getParameter("id");
 		String pAcao = request.getParameter("acao");
 		int id = -1;

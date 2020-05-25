@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<div class="hg-weather" data-key="f40c0d01"
+<div class="hg-weather" data-key="77a249ec"
 	data-woeid="${usuario.cidade}">
 	<span hidden data-weather="message">Obtendo...</span> <span
 		data-weather="city">Obtendo cidade</span> <span 
