@@ -48,6 +48,7 @@
 
             <link href="css/bootstrap.min.css" rel="stylesheet">
             <link href="css/style.css" rel="stylesheet">
+            <script src="js/hg-weather.js" type="text/javascript"></script>
         </head>
 		<link rel="stylesheet"
 				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -141,10 +142,16 @@
                             <p><strong>Endereço: </strong>
                                 ${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado } -
                                 <strong>Cep: </strong> ${endereco.cep } 
-                                <p> <strong>Complemento: </strong>${endereco.complemento }</p>
                                 <strong id="txtOrigemResultado"></strong>
                                 <div class="row">
+                                <strong>&nbsp;&nbsp;&nbsp;</strong>
+                                <p class="card-text mb-auto"> <strong>Temperatura:&nbsp;&nbsp;</strong>
+								<c:import url="APITempo/Temperatura.jsp"/>
+								</p>
+								</div>
+                                <div class="row">
 					      		<input class="form-control" name="pesquisaOrigem" type="hidden" id="txtOrigem" class="field" style="width: 400px"  />
+					      		<strong>&nbsp;&nbsp;&nbsp;</strong>
 					      		<input class="btn btn-outline-primary" type="button" value="Calcular Rota" onclick="CalculaDistancia()"/>
 					      		</div>
 					      		<input class="form-control" name="pesquisaDestino" type="hidden" id="txtDestino" class="field" style="width: 400px" value='${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado }' />

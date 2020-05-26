@@ -76,16 +76,15 @@
 
                         <div class="col-md-6">
                             <div class="input-group h2">
-                                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Endereços (deixe vazio para trazer todos)">
-                                <span class="input-group-btn" class="col-md-3">
-                	<button class="btn btn-primary" type="submit" name="acao" value="buscar">
-                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                                </span>
+                              
                             </div>
                         </div>
 
                         <div class="col-md-3">
+               				<button class="btn btn-primary" type="submit" name="acao" value="buscar"><span><svg class="bi bi-arrow-clockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ 								<path fill-rule="evenodd" d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"/>
+								<path fill-rule="evenodd" d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z"/>
+							</svg>  Atualizar</span></button>
                             <a href="Endereco.jsp" class="btn btn-primary pull-right h2">Novo Endereço</a>
                         </div>
                     </div>
