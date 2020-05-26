@@ -8,7 +8,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
-    		<script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript">
+    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE" type="text/javascript">
     		button.onclick = function() {
     			  var startPos;
     			  var element = document.getElementById("nudge");
@@ -74,8 +74,8 @@
 				response.sendRedirect("Login.jsp");
 			}
 			%>
-			<script src="http://maps.google.com/maps/api/js?sensor="></script>
-			<script src="http://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
+			<script src="http://maps.google.com/maps/api/js?sensor=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE"></script>
+			<script src="http://maps.google.com/maps/api/js?key=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE" type="text/javascript"></script>
     <script type="text/javascript">
     
     document.addEventListener('DOMContentLoaded', function(){
@@ -150,7 +150,6 @@
 					      		<input class="form-control" name="pesquisaDestino" type="hidden" id="txtDestino" class="field" style="width: 400px" value='${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado }' />
                         </div>
                     	</div>
-					      
                     	<div style="padding: 10px 0 0; clear: both">
       						<iframe width="1108" scrolling="no" height="550" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?daddr=${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado }&output=embed"></iframe>
 					      <br />
