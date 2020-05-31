@@ -273,10 +273,7 @@ body {
 			</form>
 			<div class="container-fluid" align="center"
 				style="padding: 10px 0 0; clear: both">
-				<iframe align="center" class="rounded-lg" width="900" scrolling="no"
-					height="500" frameborder="0" id="map" marginheight="0"
-					marginwidth="0"
-					src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
+				<iframe align="center" class="rounded-lg" width="900" scrolling="no"height="500" frameborder="0" id="map" marginheight="0"marginwidth="0"src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
 			</div>
 			<br>
 		</div>

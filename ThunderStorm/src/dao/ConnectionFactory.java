@@ -16,8 +16,8 @@ public class ConnectionFactory {
 	// Obtém conexão com o banco de dados
 	public static Connection obtemConexao() throws SQLException {
 		return DriverManager
-				//.getConnection("jdbc:mysql://thunderstorm.ci5za8pelfli.us-east-2.rds.amazonaws.com:3306/thunderstorm?useTimezone=true&serverTimezone=America/Sao_Paulo&user=admin&password=ThunderCats");
-				.getConnection("jdbc:mysql://localhost:3306/thunderstorm?useTimezone=true&serverTimezone=America/Sao_Paulo&user=root&password=Is@dora1609");
+				.getConnection("jdbc:mysql://thunderstorm.ci5za8pelfli.us-east-2.rds.amazonaws.com:3306/thunderstorm?useTimezone=true&serverTimezone=America/Sao_Paulo&user=admin&password=ThunderCats");
+				//.getConnection("jdbc:mysql://localhost:3306/thunderstorm?useTimezone=true&serverTimezone=America/Sao_Paulo&user=root&password=Is@dora1609");
 	}
 
 }

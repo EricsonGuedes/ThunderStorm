@@ -8,7 +8,8 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
-    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE" type="text/javascript">
+            <script src="js/geo-min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript">
     		button.onclick = function() {
     			  var startPos;
     			  var element = document.getElementById("nudge");
@@ -75,10 +76,9 @@
 				response.sendRedirect("Login.jsp");
 			}
 			%>
-			<script src="http://maps.google.com/maps/api/js?sensor=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE"></script>
-			<script src="http://maps.google.com/maps/api/js?key=AIzaSyAZE945NKrAdxNQ2F-zcolQfi4TvRsjatE" type="text/javascript"></script>
+			<script src="http://maps.google.com/maps/api/js?sensor="></script>
+			<script src="http://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
     <script type="text/javascript">
-    
     document.addEventListener('DOMContentLoaded', function(){
 
         
