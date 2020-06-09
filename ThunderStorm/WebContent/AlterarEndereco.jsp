@@ -69,33 +69,33 @@
 				      	<label for="validationDefault04">Estado</label>
 				      	<select class="custom-select" id="validationDefault04" name="estado" required>
 				        	<option selected value='${endereco.estado }' >Selecione o estado</option>
-				        	<option value="ac">AC</option>
-							<option value="al">AL</option>
-							<option value="ap">AP</option>
-							<option value="am">AM</option>
-							<option value="ba">BA</option>
-							<option value="ce">CE</option>
-							<option value="df">DF</option>
-							<option value="es">ES</option>	
-							<option value="go">GO</option>
-							<option value="ma">MA</option>
-							<option value="mt">MT</option>
-							<option value="ms">MS</option>
-							<option value="mg">MG</option>
-							<option value="pa">PA</option>
-							<option value="pb">PB</option>
-							<option value="pr">PR</option>
-							<option value="pe">PE</option>
-							<option value="pi">PI</option>
-							<option value="rj">RJ</option>
-							<option value="rn">RN</option>
-							<option value="rs">RS</option>
-							<option value="ro">RO</option>
-							<option value="rr">RR</option>
-							<option value="sc">SC</option>
-							<option value="sp">SP</option>
-							<option value="se">SE</option>
-							<option value="to">TO</option>
+				        	<option value="AC">AC</option>
+							<option value="AL">AL</option>
+							<option value="AP">AP</option>
+							<option value="AM">AM</option>
+							<option value="BA">BA</option>
+							<option value="CE">CE</option>
+							<option value="DF">DF</option>
+							<option value="ES">ES</option>	
+							<option value="GO">GO</option>
+							<option value="MA">MA</option>
+							<option value="MT">MT</option>
+							<option value="MS">MS</option>
+							<option value="MG">MG</option>
+							<option value="PA">PA</option>
+							<option value="PB">PB</option>
+							<option value="PR">PR</option>
+							<option value="PE">PE</option>
+							<option value="PI">PI</option>
+							<option value="RJ">RJ</option>
+							<option value="RN">RN</option>
+							<option value="RS">RS</option>
+							<option value="RO">RO</option>
+							<option value="RR">RR</option>
+							<option value="SC">SC</option>
+							<option value="SP">SP</option>
+							<option value="SE">SE</option>
+							<option value="TO">TO</option>
 				     	 </select>
 				    </div>
 					<div class="form-group col-md-4 mb-3">
@@ -115,8 +115,8 @@
                         <hr />
                         <div id="actions" class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="acao" value="Alterar">Salvar</button>
-                                <a href="ListarEndereco.jsp" class="btn btn-dark">Cancelar</a>
+                                <button type="submit" class="btn btn-outline-primary" name="acao" value="Alterar">Salvar</button>
+                                <a href="ListarEndereco.jsp" class="btn btn-outline-dark">Cancelar</a>
                             </div>
                         </div>
                     </form>

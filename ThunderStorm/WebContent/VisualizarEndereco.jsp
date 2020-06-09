@@ -152,7 +152,9 @@
                                 <div class="row">
 					      		<input class="form-control" name="pesquisaOrigem" type="hidden" id="txtOrigem" class="field" style="width: 400px"  />
 					      		<strong>&nbsp;&nbsp;&nbsp;</strong>
-					      		<input class="btn btn-outline-primary" type="button" value="Calcular Rota" onclick="CalculaDistancia()"/>
+					      		<a href="#" onclick="CalculaDistancia()" class="btn btn-outline-info"><svg class="bi bi-map" width="1.2em" height="1.2em" viewBox="0 0 19 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M15.817.613A.5.5 0 0 1 16 1v13a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 14.51l-4.902.98A.5.5 0 0 1 0 15V2a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0l4.902.98 4.902-.98a.5.5 0 0 1 .415.103zM10 2.41l-4-.8v11.98l4 .8V2.41zm1 11.98l4-.8V1.61l-4 .8v11.98zm-6-.8V1.61l-4 .8v11.98l4-.8z"/>
+								</svg>&nbsp;Calcular Rota</a>
 					      		</div>
 					      		<input class="form-control" name="pesquisaDestino" type="hidden" id="txtDestino" class="field" style="width: 400px" value='${endereco.endereco }, ${endereco.numero } - ${endereco.cidade } - ${endereco.estado }' />
                         </div>
@@ -165,8 +167,8 @@
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="ManterCadastroEndereco.do?acao=Editar&id=${endereco.id }" class="btn btn-primary">Editar</a>
-                            <a href="ListarEndereco.jsp" class="btn btn-dark">Voltar</a>
+                            <a href="ManterCadastroEndereco.do?acao=Editar&id=${endereco.id }" class="btn btn-outline-primary">Editar</a>
+                            <a href="ListarEndereco.jsp" class="btn btn-outline-dark">Voltar</a>
                         </div>
                     </div></div>
                 <script src="js/jquery.min.js"></script>

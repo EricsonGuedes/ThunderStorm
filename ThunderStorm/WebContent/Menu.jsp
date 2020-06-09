@@ -30,7 +30,7 @@
 		     		es.println("<li class='nav-item dropdown'>");
 	     			es.println("</li>");
 	     		es.println("<li class='nav-item' > ");	
-     			es.println("<a href='TelaInicial.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
+     			es.println("<a href='QuemSomos.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
      		es.println("</li>");
      		es.println("<li class='nav-item' > ");	
  			es.println("<a href='Login.jsp' class='nav-link' >Sair<span class='sr-only'>(current)</span></a>");

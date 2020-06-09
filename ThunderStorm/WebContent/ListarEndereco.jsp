@@ -81,16 +81,16 @@
                         </div>
 
                         <div class="col-md-3">
-               				<button class="btn btn-primary" type="submit" name="acao" value="buscar"><span><svg class="bi bi-arrow-clockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+               				<button class="btn btn-outline-primary" type="submit" name="acao" value="buscar"><span><svg class="bi bi-arrow-clockwise" width="1.3em" height="1.3em" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
  								<path fill-rule="evenodd" d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"/>
 								<path fill-rule="evenodd" d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z"/>
 							</svg>  Atualizar</span></button>
-                            <a href="Endereco.jsp" class="btn btn-primary pull-right h2">Novo Endereço</a>
                         </div>
                     </div>
                     <!-- /#top -->
                 </form>
-                <hr />
+                <br />
                 <c:if test="${not empty lista}">
                 <div id="list" class="row">
 
@@ -133,9 +133,9 @@
                                                 ${endereco.complemento }
                                             </td>
                                             <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="ManterCadastroEndereco.do?acao=Visualizar&id=${endereco.id }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="ManterCadastroEndereco.do?acao=Editar&id=${endereco.id }">Editar</a>
-                                                <button id="btn${endereco.id }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${endereco.id }">Excluir</button>
+                                                <a class="btn btn-outline-info btn-xs" href="ManterCadastroEndereco.do?acao=Visualizar&id=${endereco.id }">Visualizar</a>
+                                                <a class="btn btn-outline-secondary btn-xs" href="ManterCadastroEndereco.do?acao=Editar&id=${endereco.id }">Editar</a>
+                                                <button id="btn${endereco.id }%>" type="button" class="btn btn-outline-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${endereco.id }">Excluir</button>
                                             </td>
                                         </tr>
                             </c:forEach>
@@ -146,6 +146,13 @@
                     </div>
                 </div>
                 <!-- /#list -->
+                <hr>
+                <div class="text-right">
+                <a href="Endereco.jsp" class="btn btn-outline-primary pull-right h2"><svg class="bi bi-plus" width="1.6em" height="1.6em" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+  <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+</svg>Novo Endereço</a>
+                </div>
 
 
                 </c:if>
