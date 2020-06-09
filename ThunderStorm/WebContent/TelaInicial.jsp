@@ -5,20 +5,21 @@
 <html lang="pt-br">
 
 <head>
+
 <script type="text/javascript">
-    var _egoiwp = _egoiwp || {};
-    (function(){
-    var u="https://cdn-static.egoiapp2.com/";
-    _egoiwp.code = "d8d1b87606d36cc0ca068c3e45957568";
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript';
-    g.defer=true;
-    g.async=true;
-    g.src=u+'webpush.js';
-    s.parentNode.insertBefore(g,s);
-    })();
-	</script>
-<script>
+	var _egoiwp = _egoiwp || {};
+	(function(){
+	var u="https://cdn-static.egoiapp2.com/";
+	_egoiwp.code = "d8d1b87606d36cc0ca068c3e45957568";
+	var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	g.type='text/javascript';
+	g.defer=true;
+	g.async=true;
+	g.src=u+'webpush.js';
+	s.parentNode.insertBefore(g,s);
+	})();
+</script>
+
 //some default pre init
 var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
 
