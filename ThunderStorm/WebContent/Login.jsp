@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,12 +66,13 @@ body {
 </head>
 <body class="text-center">
 	<% session.invalidate();%>
+	<c:import url="Menu.jsp" />
 		<form id="main" class="form-signin" action ="ManterLogado.do" method="post">
 			<br>
 			<br>
 			<img class="mb-4" src="Image/logolight.png" alt=""	width="300" height="90"> 
-			<label for="usuario" class="sr-only">Usu·rio</label>
-			<input type="text" name="usuario"	class="form-control" placeholder="Usu·rio" required="" autofocus="">
+			<label for="usuario" class="sr-only">Usu√°rio</label>
+			<input type="text" name="usuario"	class="form-control" placeholder="Usu√°rio" required="" autofocus="">
 			<label for="senha" class="sr-only">Senha</label> 
 			<input type="password" name="senha" class="form-control" placeholder="Senha" required="">
 			<br>
