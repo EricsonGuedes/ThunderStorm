@@ -13,15 +13,6 @@
 	  			es.println("</button>");
 	  			es.println("<div class='collapse navbar-collapse' id='navbarNavDropdown'>");
 	    		es.println("<ul class='navbar-nav'>");
-	    		es.println("<li class='nav-item'> ");	
-     			es.println("<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>");
-     		es.println("</li>");
-	    		es.println("<li class='nav-item'> ");	
-     			es.println("<a href='QuemSomos.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
-     		es.println("</li>");
-	      		
-	    	if (session.getAttribute("usuario") != null){
-	    		
 		     		es.println("<li class='nav-item'>");	
 		     			es.println("<a href='TelaInicial.jsp' class='nav-link' >Página Inicial<span class='sr-only'>(current)</span></a>");
 		     		es.println("</li>");
@@ -35,15 +26,10 @@
 		     		es.println("</li>");
 		     		es.println("<li class='nav-item dropdown'>");
 	     			es.println("</li>");
-	     		es.println("<li class='nav-item' > ");	
-     			es.println("<a href='QuemSomos.jsp' class='nav-link' >Quem somos<span class='sr-only'>(current)</span></a>");
-     		es.println("</li>");
      		es.println("<li class='nav-item' > ");	
  			es.println("<a href='Login.jsp' class='nav-link' >Sair<span class='sr-only'>(current)</span></a>");
  		es.println("</li>");
-	     		
-	    	}
-    			es.println("</ul>");
+    		es.println("</ul>");
 			es.println("</div>");
 			es.println("</nav>");
 			es.println("<br>");

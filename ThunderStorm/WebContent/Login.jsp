@@ -66,7 +66,7 @@ body {
 </head>
 <body class="text-center">
 	<% session.invalidate();%>
-	<c:import url="Menu.jsp" />
+	<c:import url="MenuLogin.jsp" />
 		<form id="main" class="form-signin" action ="ManterLogado.do" method="post">
 			<br>
 			<br>
